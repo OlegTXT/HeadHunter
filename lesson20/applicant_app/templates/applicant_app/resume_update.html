@@ -1,0 +1,18 @@
+{% extends 'applicant_app/base.html' %}
+
+{% block title %}
+    Resume Update Page
+{% endblock %}
+
+{% block content %}
+
+<div class="div_resume_update">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <p><a href="{% url 'vacancy_list' %}">back to vacancy list</a></p>
+</div>
+{% endblock content %}
